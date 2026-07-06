@@ -97,3 +97,14 @@ document.addEventListener('keydown', (e) => {
     if (pad) pad.click();
   }
 });
+
+// ===== COMMIT 9: volume display =====
+const volumeDisplay = document.createElement('span');
+volumeDisplay.style.cssText = 'color: #94a3b8; font-size: 0.85rem; min-width: 35px; text-align: center;';
+const volSection = document.querySelector('.volume-section');
+volSection.insertBefore(volumeDisplay, volSection.lastElementChild);
+
+volumeSlider.addEventListener('input', (e) => {
+  const volume = parseFloat(e.target.value);
+  volumeDisplay.textContent = Math.round(volume * 100) + '%';
+});
