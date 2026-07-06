@@ -211,3 +211,40 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.12);
   background: #ffffff;
 }
+
+/* ===== COMMIT 7: responsive design ===== */
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+  .soundboard-card {
+    padding: 1.2rem;
+    border-radius: 2rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .volume-section {
+    padding: 0.3rem 0.8rem;
+  }
+  input[type="range"] {
+    width: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sub {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .volume-section {
+    justify-content: center;
+  }
+  .stop-btn {
+    justify-content: center;
+  }
+}

@@ -68,3 +68,21 @@ sounds.forEach((sound, index) => {
     audio.load();
   });
 });
+
+// ===== COMMIT 7: visual feedback on play =====
+sounds.forEach((sound, index) => {
+  const pad = grid.children[index];
+  const audio = audioElements[sound.name];
+  
+  audio.addEventListener('play', () => {
+    pad.style.background = 'rgba(250, 204, 21, 0.25)';
+    pad.style.borderColor = '#facc15';
+    pad.style.transform = 'scale(0.97)';
+  });
+  
+  audio.addEventListener('ended', () => {
+    pad.style.background = '';
+    pad.style.borderColor = '';
+    pad.style.transform = '';
+  });
+});
