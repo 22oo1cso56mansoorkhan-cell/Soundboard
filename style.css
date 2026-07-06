@@ -103,3 +103,45 @@ input[type="range"]::-webkit-slider-thumb {
   background: #b91c1c;
   transform: scale(1.02);
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.sound-pad {
+  background: #334155;
+  border-radius: 20px;
+  padding: 1rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  color: #e2e8f0;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  aspect-ratio: 1/0.9;
+  text-align: center;
+  transition: all 0.12s;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+}
+
+.sound-pad i {
+  font-size: 2rem;
+  margin-bottom: 4px;
+  color: #facc15;
+}
+
+.sound-pad:active {
+  transform: scale(0.93);
+  background: rgba(250, 204, 21, 0.2);
+}
+
+.sound-pad:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}

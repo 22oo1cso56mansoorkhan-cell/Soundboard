@@ -21,3 +21,18 @@ sounds.forEach((sound) => {
   pad.innerHTML = `<i class="${sound.icon}"></i> ${sound.name}`;
   grid.appendChild(pad);
 });
+
+const audioElements = {};
+
+sounds.forEach((sound, index) => {
+  const pad = grid.children[index];
+  const audio = new Audio();
+  audio.src = `https://www.soundjay.com/misc/sounds/${sound.name.toLowerCase()}-01.mp3`;
+  audio.preload = 'auto';
+  audioElements[sound.name] = audio;
+  
+  pad.addEventListener('click', () => {
+    audio.currentTime = 0;
+    audio.play();
+  });
+});
