@@ -198,3 +198,16 @@ input[type="range"]::-webkit-slider-thumb {
   border-color: #facc15;
 }
 
+/* ===== COMMIT 6: volume slider styling ===== */
+input[type="range"] {
+  background: linear-gradient(90deg, #b9c7d9, #facc15);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  background: #ffffff;
+}

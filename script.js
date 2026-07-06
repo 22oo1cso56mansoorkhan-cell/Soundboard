@@ -56,3 +56,15 @@ stopAllBtn.addEventListener('click', () => {
     audio.currentTime = 0;
   });
 });
+
+// ===== COMMIT 6: load fallback sounds if originals fail =====
+sounds.forEach((sound, index) => {
+  const pad = grid.children[index];
+  const audio = audioElements[sound.name];
+  
+  audio.addEventListener('error', () => {
+    // Fallback to alternative source
+    audio.src = `https://www.soundjay.com/button/beep-${index + 1}.mp3`;
+    audio.load();
+  });
+});
