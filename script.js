@@ -36,3 +36,13 @@ sounds.forEach((sound, index) => {
     audio.play();
   });
 });
+
+// ===== COMMIT 4: volume slider functionality =====
+const volumeSlider = document.getElementById('volumeSlider');
+
+volumeSlider.addEventListener('input', (e) => {
+  const volume = parseFloat(e.target.value);
+  Object.values(audioElements).forEach(audio => {
+    audio.volume = volume;
+  });
+});

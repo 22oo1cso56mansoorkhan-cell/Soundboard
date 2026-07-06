@@ -145,3 +145,33 @@ input[type="range"]::-webkit-slider-thumb {
   background: #475569;
   transform: translateY(-2px);
 }
+
+/* ===== COMMIT 4: demo link styles ===== */
+.demo-link {
+  margin-top: 2.2rem;
+  border-top: 1px solid #334155;
+  padding-top: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.demo-link a {
+  color: #93bbfc;
+  text-decoration: none;
+  background: #1e293b;
+  padding: 0.4rem 1.2rem;
+  border-radius: 40px;
+  border: 1px solid #334155;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.demo-link a:hover {
+  background: #2d3a52;
+  color: #b9d0ff;
+}
