@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #0f172a;
+  background: linear-gradient(145deg, #1e2b3c 0%, #0f172a 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,25 +17,31 @@ body {
 .soundboard-card {
   max-width: 820px;
   width: 100%;
-  background: #1e293b;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(6px);
   border-radius: 3rem;
-  padding: 2rem;
-  box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+  padding: 2rem 2rem 2.5rem;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 h1 {
   font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: #f0eef7;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.2rem;
-  border-bottom: 2px solid #facc15;
+  border-bottom: 2px solid rgba(255, 215, 100, 0.25);
   padding-bottom: 0.7rem;
 }
 
 h1 i {
   color: #fbbf24;
+  font-size: 2rem;
 }
 
 .sub {
@@ -44,23 +50,35 @@ h1 i {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 2rem;
-  gap: 0.8rem;
+  gap: 0.8rem 1.2rem;
 }
 
 .volume-section {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: #0f172a;
-  padding: 0.5rem 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1.2rem 0.5rem 1.5rem;
   border-radius: 50px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .volume-section i {
   color: #94a3b8;
+  font-size: 1.2rem;
 }
+
 .volume-section i.fa-volume-high {
   color: #facc15;
+}
+
+#volumeDisplay {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  min-width: 40px;
+  text-align: center;
+  font-weight: 600;
 }
 
 input[type="range"] {
@@ -68,14 +86,31 @@ input[type="range"] {
   height: 6px;
   -webkit-appearance: none;
   appearance: none;
-  background: #b9c7d9;
+  background: linear-gradient(90deg, #b9c7d9, #facc15);
   border-radius: 10px;
   outline: none;
+  transition: 0.2s;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f8fafc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border: 2px solid #facc15;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  background: #ffffff;
+}
+
+input[type="range"]::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -95,13 +130,21 @@ input[type="range"]::-webkit-slider-thumb {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.3);
   cursor: pointer;
   transition: 0.15s;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.4px;
 }
 
 .stop-btn:hover {
   background: #b91c1c;
   transform: scale(1.02);
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.5);
+}
+
+.stop-btn:active {
+  transform: scale(0.96);
 }
 
 .grid {
@@ -112,7 +155,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .sound-pad {
-  background: #334155;
+  background: rgba(51, 65, 85, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   padding: 1rem 0.2rem;
   display: flex;
@@ -123,33 +168,53 @@ input[type="range"]::-webkit-slider-thumb {
   color: #e2e8f0;
   font-weight: 500;
   font-size: 0.85rem;
+  transition: all 0.12s;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   aspect-ratio: 1/0.9;
   text-align: center;
-  transition: all 0.12s;
-  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+  line-height: 1.3;
+  letter-spacing: 0.3px;
 }
 
 .sound-pad i {
   font-size: 2rem;
   margin-bottom: 4px;
   color: #facc15;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.sound-pad span {
+  background: rgba(0,0,0,0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #cbd5e1;
+  margin-top: 2px;
 }
 
 .sound-pad:active {
   transform: scale(0.93);
   background: rgba(250, 204, 21, 0.2);
+  border-color: #facc15;
 }
 
 .sound-pad:hover {
-  background: #475569;
+  background: rgba(51, 65, 85, 0.9);
+  border-color: rgba(250, 204, 21, 0.3);
   transform: translateY(-2px);
 }
 
-/* ===== COMMIT 4: demo link styles ===== */
+.sound-pad.active {
+  background: rgba(250, 204, 21, 0.25);
+  border-color: #facc15;
+  transform: scale(0.97);
+}
+
 .demo-link {
   margin-top: 2.2rem;
-  border-top: 1px solid #334155;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1.3rem;
   display: flex;
   justify-content: space-between;
@@ -161,10 +226,11 @@ input[type="range"]::-webkit-slider-thumb {
 .demo-link a {
   color: #93bbfc;
   text-decoration: none;
-  background: #1e293b;
+  font-weight: 500;
+  background: rgba(37, 99, 235, 0.15);
   padding: 0.4rem 1.2rem;
   border-radius: 40px;
-  border: 1px solid #334155;
+  border: 1px solid rgba(147, 187, 252, 0.2);
   transition: 0.2s;
   display: inline-flex;
   align-items: center;
@@ -172,47 +238,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .demo-link a:hover {
-  background: #2d3a52;
+  background: rgba(37, 99, 235, 0.3);
   color: #b9d0ff;
+  border-color: rgba(147, 187, 252, 0.4);
 }
 
-/* ===== COMMIT 5: glassmorphism and animations ===== */
-.soundboard-card {
-  background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.sound-pad {
-  background: rgba(51, 65, 85, 0.7);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.sound-pad:hover {
-  background: rgba(51, 65, 85, 0.9);
-  border-color: rgba(250, 204, 21, 0.3);
-}
-
-.sound-pad:active {
-  border-color: #facc15;
-}
-
-/* ===== COMMIT 6: volume slider styling ===== */
-input[type="range"] {
-  background: linear-gradient(90deg, #b9c7d9, #facc15);
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.12);
-  background: #ffffff;
-}
-
-/* ===== COMMIT 7: responsive design ===== */
 @media (max-width: 650px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -248,56 +278,3 @@ input[type="range"]::-webkit-slider-thumb:hover {
     justify-content: center;
   }
 }
-
-/* ===== COMMIT 8: volume icon color ===== */
-.volume-section i.fa-volume-low {
-  color: #64748b;
-}
-.volume-section i.fa-volume-high {
-  color: #facc15;
-  filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.3));
-}
-
-/* ===== COMMIT 9: stop button glow ===== */
-.stop-btn {
-  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  letter-spacing: 0.4px;
-}
-
-.stop-btn:hover {
-  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.5);
-}
-
-.stop-btn:active {
-  transform: scale(0.96);
-}
-
-/* ===== COMMIT 10: final polish ===== */
-.sound-pad span {
-  background: rgba(0,0,0,0.2);
-  padding: 0.2rem 0.6rem;
-  border-radius: 30px;
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: #cbd5e1;
-}
-
-body {
-  background: linear-gradient(145deg, #1e2b3c 0%, #0f172a 100%);
-}
-
-.soundboard-card {
-  border: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.demo-link a {
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(147, 187, 252, 0.2);
-}
-
-.demo-link a:hover {
-  background: rgba(37, 99, 235, 0.3);
-  border-color: rgba(147, 187, 252, 0.4);
-}
-
