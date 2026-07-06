@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soundboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="soundboard-card">
+    <h1><i class="fas fa-music"></i> Soundboard</h1>
+    <div class="sub">
+      <div class="volume-section">
+        <i class="fas fa-volume-low"></i>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.8" />
+        <i class="fas fa-volume-high"></i>
+      </div>
+      <button class="stop-btn" id="stopAllBtn"><i class="fas fa-stop-circle"></i> Stop all</button>
+    </div>
+    <div class="grid" id="soundGrid"></div>
+    <div class="demo-link">
+      <span style="color: #94a3b8; font-size: 0.9rem;">🎥 Video demo:</span>
+      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><i class="fas fa-play-circle"></i> Watch demo</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
