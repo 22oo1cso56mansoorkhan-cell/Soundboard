@@ -38,3 +38,68 @@ h1 i {
   color: #fbbf24;
 }
 
+.sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 0.8rem;
+}
+
+.volume-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #0f172a;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+}
+
+.volume-section i {
+  color: #94a3b8;
+}
+.volume-section i.fa-volume-high {
+  color: #facc15;
+}
+
+input[type="range"] {
+  width: 140px;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #b9c7d9;
+  border-radius: 10px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 2px solid #facc15;
+  cursor: pointer;
+}
+
+.stop-btn {
+  background: #dc2626;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+  border-radius: 40px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.stop-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.02);
+}

@@ -12,3 +12,12 @@ const sounds = [
   { name: 'Synth', icon: 'fa-solid fa-wave-square' },
   { name: 'Wood', icon: 'fa-solid fa-tree' }
 ];
+
+const grid = document.getElementById('soundGrid');
+
+sounds.forEach((sound) => {
+  const pad = document.createElement('div');
+  pad.className = 'sound-pad';
+  pad.innerHTML = `<i class="${sound.icon}"></i> ${sound.name}`;
+  grid.appendChild(pad);
+});
