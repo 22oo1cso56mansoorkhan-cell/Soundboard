@@ -108,3 +108,32 @@ volumeSlider.addEventListener('input', (e) => {
   const volume = parseFloat(e.target.value);
   volumeDisplay.textContent = Math.round(volume * 100) + '%';
 });
+
+// ===== COMMIT 10: final polish and cleanup =====
+// Ensure all sounds work properly
+sounds.forEach((sound, index) => {
+  const pad = grid.children[index];
+  const audio = audioElements[sound.name];
+  
+  // Add tooltip with keyboard shortcut
+  const keyMap = 'abcdefghijkl'.split('');
+  const shortcut = keyMap[index] || '';
+  pad.innerHTML = `<i class="${sound.icon}"></i> ${sound.name}<span>${shortcut}</span>`;
+  
+  // Set initial volume
+  audio.volume = parseFloat(volumeSlider.value);
+  
+  // Handle multiple clicks properly
+  pad.addEventListener('click', (e) => {
+    e.stopPropagation();
+    audio.currentTime = 0;
+    audio.play().catch(err => console.log('Playback error:', err));
+  });
+});
+
+// Set initial volume display
+volumeDisplay.textContent = Math.round(parseFloat(volumeSlider.value) * 100) + '%';
+
+console.log('🎵 Soundboard loaded with 12 sounds!');
+console.log('🔊 Volume slider and stop all button ready!');
+console.log('⌨️ Keyboard shortcuts: keys A-L for pads 1-12');
