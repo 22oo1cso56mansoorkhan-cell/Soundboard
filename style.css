@@ -175,3 +175,26 @@ input[type="range"]::-webkit-slider-thumb {
   background: #2d3a52;
   color: #b9d0ff;
 }
+
+/* ===== COMMIT 5: glassmorphism and animations ===== */
+.soundboard-card {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sound-pad {
+  background: rgba(51, 65, 85, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sound-pad:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: rgba(250, 204, 21, 0.3);
+}
+
+.sound-pad:active {
+  border-color: #facc15;
+}
+

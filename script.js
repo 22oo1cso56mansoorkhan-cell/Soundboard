@@ -46,3 +46,13 @@ volumeSlider.addEventListener('input', (e) => {
     audio.volume = volume;
   });
 });
+
+// ===== COMMIT 5: stop all functionality =====
+const stopAllBtn = document.getElementById('stopAllBtn');
+
+stopAllBtn.addEventListener('click', () => {
+  Object.values(audioElements).forEach(audio => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+});
