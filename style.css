@@ -248,3 +248,12 @@ input[type="range"]::-webkit-slider-thumb:hover {
     justify-content: center;
   }
 }
+
+/* ===== COMMIT 8: volume icon color ===== */
+.volume-section i.fa-volume-low {
+  color: #64748b;
+}
+.volume-section i.fa-volume-high {
+  color: #facc15;
+  filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.3));
+}

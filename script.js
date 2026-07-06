@@ -86,3 +86,14 @@ sounds.forEach((sound, index) => {
     pad.style.transform = '';
   });
 });
+
+// ===== COMMIT 8: keyboard shortcuts =====
+document.addEventListener('keydown', (e) => {
+  const key = e.key.toLowerCase();
+  const keyMap = 'abcdefghijkl'.split('');
+  const index = keyMap.indexOf(key);
+  if (index !== -1 && index < sounds.length) {
+    const pad = grid.children[index];
+    if (pad) pad.click();
+  }
+});
